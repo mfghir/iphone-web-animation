@@ -314,3 +314,59 @@ a {
 .right-info {
     margin-right: -14%;
 }
+
+
+
+/* sixth page */
+.sixth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    
+    position: relative;
+    padding: 10% 20%;
+    margin: 10% 0;
+
+}
+
+.portrait {
+    height: 100vh;
+}
+
+.photo-title {
+    font-size: 1.5rem;
+}
+
+.photo-subtitle {
+    font-size: 2rem;
+}
+
+.phone-video {
+    position: absolute;
+    bottom: -5%;
+    left: 30%;
+    
+    z-index: 2;
+    /* transform: translate(-40%, 0%); */
+}
+
+.phone-video img,
+.phone-video video {
+    position: absolute;
+}
+
+.phone-video img {
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+
+    transform: scale(0.7);
+}
+
+.phone-video video {
+    left: 1rem;
+    bottom: 1rem;
+    transform: scale(0.72);
+
+    border-radius: 2rem;
+}
