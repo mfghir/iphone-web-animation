@@ -188,3 +188,74 @@ a {
 .product-text-right {
     margin-left: 15%;
 }
+
+
+
+
+/* forth page */
+.forth-page {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+
+    margin-top: 15%;
+    overflow-x: hidden;
+}
+
+.purchase-left {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    align-items: center;
+    justify-content: center;
+    background: white;
+
+    flex: 1;
+}
+
+.phone-gallery {
+    display: flex;
+    align-self: flex-start;
+}
+
+.phone-gallery img {
+    transform: scale(0.7);
+}
+
+.phone-gallery-container {
+    min-width: 50vw;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+}
+
+.swatch-container {
+    text-align: center;
+}
+
+.swatch-container span {
+    font-size: 0.8rem;
+}
+
+.swatches img {
+    padding: 0.5rem 0.3rem;
+    cursor: pointer;
+}
+
+/* Purchase right */
+.purchase-right {
+    flex: 1;
+    position: relative;
+    background: black;
+}
+
+.purchase-right img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transform: translate(-50%, 0%) scale(0.6);
+    transform-origin: bottom;
+}
