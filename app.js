@@ -74,9 +74,7 @@ const tlSplitPin = gsap.timeline({
   },
 });
 
-
-
-// Carousel
+// Carousel - page 4
 const swatches = document.querySelectorAll(".swatches img");
 const gallery = document.querySelector(".phone-gallery");
 const slides = document.querySelectorAll(".phone-gallery-container");
@@ -104,3 +102,27 @@ swatches.forEach((swatch, index) => {
     currentSwatch = swatchName;
   });
 });
+
+// Page 5
+const tlVideo = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".fifth-page",
+    start: "0%",
+    end: "100%",
+    scrub: true,
+    pin: true,
+  },
+});
+
+tlVideo.fromTo(
+  ".product-video",
+  { currentTime: 0 },
+  { currentTime: 3, duration: 1 }
+);
+
+tlVideo.fromTo(
+  ".product-info-container h4",
+  { opacity: 0 },
+  { opacity: 1, stagger: 0.25, duration: 0.5 },
+  "<"
+);
