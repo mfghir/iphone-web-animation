@@ -9,13 +9,13 @@ const tlIntro = gsap.timeline({
   },
 });
 
-//Highlight PAGE 2
+// page 2
 const tlH = gsap.timeline({
   scrollTrigger: {
     trigger: ".second-page",
     markers: { startColor: "blue", endColor: "blue" },
     scrub: true,
-    start: "-37%",
+    start: "-40%",
     end: "40%",
   },
 });
@@ -63,3 +63,44 @@ tlSplit.fromTo(
   { opacity: 1, x: 50 },
   "<"
 );
+
+const tlSplitPin = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".third-page",
+    pin: true,
+    pinSpacing: false,
+    start: "0%",
+    end: "100%",
+  },
+});
+
+
+
+// Carousel
+const swatches = document.querySelectorAll(".swatches img");
+const gallery = document.querySelector(".phone-gallery");
+const slides = document.querySelectorAll(".phone-gallery-container");
+
+let currentSwatch = "blue";
+let topIndex = 2;
+
+swatches.forEach((swatch, index) => {
+  const coord = slides[index].getBoundingClientRect().left;
+
+  swatch.addEventListener("click", (e) => {
+    let swatchName = e.target.getAttribute("swatch");
+    let closeUp = document.querySelector("." + swatchName);
+    //Check if we are on the same swatch
+    if (currentSwatch === swatchName) return;
+
+    gsap.set(closeUp, { zIndex: topIndex });
+    gsap.fromTo(closeUp, { opacity: 0 }, { opacity: 1, duration: 1 });
+
+    //Gallery
+    gsap.to(gallery, { x: -coord, duration: 1, ease: "back.out(1)" });
+
+    //Increment zIndex
+    topIndex++;
+    currentSwatch = swatchName;
+  });
+});
